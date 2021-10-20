@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:id="@+id/et2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginLeft="72dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:hint="오른쪽숫자"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/et1"></EditText>
+
+    <Button
+        android:id="@+id/minusBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="빼기"
+        app:layout_constraintStart_toStartOf="@+id/plusBtn"
+        app:layout_constraintTop_toBottomOf="@+id/plusBtn"></Button>
+
+    <EditText
+        android:id="@+id/et1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="36dp"
+        android:hint="왼쪽숫자"
+        app:layout_constraintEnd_toStartOf="@+id/et2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></EditText>
+
+    <Button
+        android:id="@+id/divBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:text="나누기"
+        app:layout_constraintEnd_toEndOf="@+id/minusBtn"
+        app:layout_constraintTop_toBottomOf="@+id/minusBtn"></Button>
+
+    <Button
+        android:id="@+id/multiBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="48dp"
+        android:text="곱하기"
+        app:layout_constraintStart_toStartOf="@+id/divBtn"
+        app:layout_constraintTop_toBottomOf="@+id/divBtn"></Button>
+
+    <TextView
+        android:id="@+id/resultTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="13dp"
+        android:text="결과 위치"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/infoTv"
+        app:layout_constraintTop_toBottomOf="@+id/multiBtn" />
+
+    <TextView
+        android:id="@+id/infoTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
+        android:text="계산 결과:"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/resultTv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/multiBtn" />
+
+    <Button
+        android:id="@+id/plusBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:text="더하기"
+        app:layout_constraintStart_toEndOf="@+id/et1"
+        app:layout_constraintTop_toBottomOf="@+id/et1"></Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

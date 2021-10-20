@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--텍스트뷰, text="어플 보이기"  id값부여-->
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="어플 보이기"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--체크박스, text="체크시 보임" id값부여-->
+    <CheckBox
+        android:id="@+id/cb1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="23dp"
+        android:text="체크시 보임"
+        app:layout_constraintStart_toStartOf="@+id/tv1"
+        app:layout_constraintTop_toBottomOf="@+id/tv1" />
+    <!--텍스트뷰, text="보고싶은 동물"
+       android:visibility="invisible" id부여-->
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
+        android:text="보고싶은 동물"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/cb1"
+        app:layout_constraintTop_toBottomOf="@+id/cb1" />
+
+    <!--라디오그룹, android:visibility="invisible"-->
+    <!--그룹 내부에 라디오버튼, id값부여-->
+
+
+    <!--버튼, text="선택 완료", invisible id부여-->
+    <RadioGroup
+        android:id="@+id/rg1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="36dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/scBtn"
+        app:layout_constraintTop_toBottomOf="@+id/tv2">
+
+        <RadioButton
+            android:id="@+id/dinoBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="공룡"
+            android:visibility="invisible"
+            tools:layout_editor_absoluteX="171dp"
+            tools:layout_editor_absoluteY="280dp" />
+
+        <RadioButton
+            android:id="@+id/catBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="고양이"
+            android:visibility="invisible"
+            tools:layout_editor_absoluteX="179dp"
+            tools:layout_editor_absoluteY="333dp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/scBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
+        android:text="선택 완료"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/dinoImg"
+        app:layout_constraintTop_toBottomOf="@+id/rg1"></Button>
+
+    <!--이미지뷰, 사진가진 동물들 개수만큼 생성
+    id값 부여, invisible-->
+
+    <ImageView
+        android:id="@+id/catImg"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:src="@drawable/cat"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/dinoImg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scBtn" />
+
+    <ImageView
+        android:id="@+id/dinoImg"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
+        android:src="@drawable/dino"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/catImg"
+        app:layout_constraintTop_toBottomOf="@+id/scBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
