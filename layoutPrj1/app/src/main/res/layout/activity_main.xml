@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:text="기준 위젯"
+        android:id="@+id/baseBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/baseBtn"
+        android:layout_toRightOf="@+id/baseBtn"
+        android:text="top, right"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/baseBtn"
+        android:layout_toRightOf="@+id/baseBtn"
+        android:text="baseline, right"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/baseBtn"
+        android:layout_toRightOf="@+id/baseBtn"
+        android:text="bottom, right"/>
+
+
+
+</RelativeLayout>
+
+
+
+
+
