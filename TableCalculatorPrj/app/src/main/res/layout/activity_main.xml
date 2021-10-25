@@ -79,6 +79,12 @@
             android:text="/" />
     </TableRow>
     <TableRow>
+        <Button
+            android:id="@+id/btndefault"
+            android:layout_span="5"
+            android:text="초기화" />
+    </TableRow>
+    <TableRow>
         <TextView
             android:text="결과:" />
         <TextView

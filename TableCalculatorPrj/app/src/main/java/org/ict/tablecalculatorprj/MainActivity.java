@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     // 이외 나머지 요소는 전부 직접 선언해주세요.
     EditText et1, et2;
     TextView result;
-    Button btnplus, btnminus, btnmul, btndiv;
+    Button btnplus, btnminus, btnmul, btndiv, btndefault;
 
 
     @Override
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         btnminus = (Button) findViewById(R.id.btnminus);
         btnmul = (Button) findViewById(R.id.btnmul);
         btndiv = (Button) findViewById(R.id.btndiv);
+        btndefault = (Button) findViewById(R.id.btndefault);
 
         // 부품 배열에 대해서는 이벤트까지 반복문으로 겁니다.
         for(int i = 0; i< numBtns.length; i++){
@@ -52,20 +53,73 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     // 포커스된 EditText에 숫자 입력하기
                     if(et1.isFocused()){
-                        // et1에 커서가 깜빡이는(즉 선택된)경우
-                        et1.setText();
+                        // 0을 첫 글자로 입력하는걸 방지하는 로직 추가 예정
+                        if((et1.getText() + "").equals("0")){
+                            et1.setText(numBtns[index].getText());
+                        }else {
+                            // et1에 커서가 깜빡이는(즉 선택된)경우
+                            et1.setText(et1.getText() + "" + numBtns[index].getText());
+                        }
                     } else if(et2.isFocused()){
-                        // et2에 커서가 깜빡이는(즉 선택된)경우
-                        et2.setText();
+                        // 0을 첫 글자로 입력하는걸 방지하는 로직 추가 예정
+                        if((et2.getText() + "").equals("0")){
+                            et2.setText(numBtns[index].getText());
+                        }else {
+                            // et2에 커서가 깜빡이는(즉 선택된)경우
+                            et2.setText(et2.getText() + "" + numBtns[index].getText());
+                        }
                     }
                 }
             });
 
         }
 
+        btnplus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int resultNum1 = Integer.parseInt(et1.getText() + "");
+                int resultNum2 = Integer.parseInt(et2.getText() + "");
+                int calcNum = resultNum1 + resultNum2;
+                result.setText(calcNum + "");
+            }
+        });
+        btnminus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int resultNum1 = Integer.parseInt(et1.getText() + "");
+                int resultNum2 = Integer.parseInt(et2.getText() + "");
+                int calcNum = resultNum1 - resultNum2;
+                result.setText(calcNum + "");
+            }
+        });
+        btndiv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int resultNum1 = Integer.parseInt(et1.getText() + "");
+                int resultNum2 = Integer.parseInt(et2.getText() + "");
+                int calcNum = resultNum1 / resultNum2;
+                result.setText(calcNum + "");
+            }
+        });
+        btnmul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int resultNum1 = Integer.parseInt(et1.getText() + "");
+                int resultNum2 = Integer.parseInt(et2.getText() + "");
+                int calcNum = resultNum1 * resultNum2;
+                result.setText(calcNum + "");
+            }
+        });
 
+        btndefault.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                et1.setText("");
+                et2.setText("");
+            }
+        });
 
-    }
+    }// end onCreate
 }
 
 
