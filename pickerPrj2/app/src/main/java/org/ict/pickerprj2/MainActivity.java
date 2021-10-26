@@ -55,11 +55,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // 현재 시간 얻어오기
-                long now =System.currentTimeMillis();
+                long now = System.currentTimeMillis();
                 Date date = new Date(now);
                 
                 // 1. 시간을 얻어서 dPicker, tPicker에 갱신
-                dPicker.updateDate((date.getYear()+1900), (date.getMonth()), date.getDate());
+                dPicker.updateDate((date.getYear()+1900),
+                                    (date.getMonth()),
+                                    date.getDate());
                 tPicker.setHour(date.getHours());
                 tPicker.setMinute(date.getMinutes());
                 Log.d("연",  (1900 + date.getYear()) + "");
