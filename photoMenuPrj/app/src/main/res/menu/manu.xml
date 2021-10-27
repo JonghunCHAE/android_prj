@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/cat"
+        android:title="고양이 사진"></item>
+    <item
+        android:id="@+id/dino"
+        android:title="공룡 사진"></item>
+    <item
+        android:id="@+id/cord"
+        android:title="코딩 사진"></item>
+</menu>
