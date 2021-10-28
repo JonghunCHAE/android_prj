@@ -1,12 +1,15 @@
 package org.ict.contextmenuprj;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -56,10 +59,26 @@ public class MainActivity extends AppCompatActivity {
 
     // menu1, menu2 내부의 옵션을 클릭했을때 실행할 내용들은
     // onContextItemSelected를 Override를 통해 구현합니다.
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
 
+        Log.d("선택된 요소", item.getItemId()+"");
+        if (item.getItemId() == R.id.backRed){
+            bgl.setBackgroundColor(Color.RED);
+        } else if(item.getItemId()==R.id.backBlue) {
+            bgl.setBackgroundColor(Color.BLUE);
+        } else if(item.getItemId()==R.id.backGreen) {
+            bgl.setBackgroundColor(Color.GREEN);
+        } else if(item.getItemId()==R.id.backYellow) {
+            bgl.setBackgroundColor(Color.YELLOW);
+        } else if(item.getItemId() == R.id.rotate){
+            changeBtn.setRotation(45);
+        } else if(item.getItemId() == R.id.upSize){
+            changeBtn.setScaleX(2);
+        }
 
-
-
+        return super.onContextItemSelected(item);
+    }
 }
 
 
